@@ -1,0 +1,56 @@
+.list {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    list-style-type: none;
+
+    &.strip {
+        &:first-child {
+            border-top: 0;
+        }
+
+        &:last-child {
+            border-bottom: 0;
+        }
+    }
+
+    .list-item {
+        position: relative;
+        display: block;
+
+        &.selected {
+            z-index: 2;
+            color: $white;
+            background-color: $cyan-d-4;
+            border-color: $cyan-d-4;
+        }
+
+        &.disabled {
+            z-index: 2;
+            color: $grey-d-1;
+            cursor: default;
+            pointer-events: none;
+        }
+
+        &-action {
+            cursor: pointer;
+
+            &:hover,
+            &:focus {
+                z-index: 2;
+                background-color: $cyan-l-5;
+            }
+        }
+
+        &:first-child {
+            border-top-left-radius: .25rem;
+            border-top-right-radius: .25rem;
+        }
+
+        &:last-child {
+            border-bottom-left-radius: .25rem;
+            border-bottom-right-radius: .25rem;
+        }
+    }
+}

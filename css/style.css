@@ -1,0 +1,57 @@
+.list {
+  display: -ms-flexbox;
+  display: -webkit-box;
+  display: flex;
+  -ms-flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+  list-style-type: none;
+}
+
+.list.strip:first-child {
+  border-top: 0;
+}
+
+.list.strip:last-child {
+  border-bottom: 0;
+}
+
+.list .list-item {
+  position: relative;
+  display: block;
+}
+
+.list .list-item.selected {
+  z-index: 2;
+  color: #ffffff;
+  background-color: #006064;
+  border-color: #006064;
+}
+
+.list .list-item.disabled {
+  z-index: 2;
+  color: #757575;
+  cursor: default;
+  pointer-events: none;
+}
+
+.list .list-item-action {
+  cursor: pointer;
+}
+
+.list .list-item-action:hover, .list .list-item-action:focus {
+  z-index: 2;
+  background-color: #e0f7fa;
+}
+
+.list .list-item:first-child {
+  border-top-left-radius: .25rem;
+  border-top-right-radius: .25rem;
+}
+
+.list .list-item:last-child {
+  border-bottom-left-radius: .25rem;
+  border-bottom-right-radius: .25rem;
+}
+/*# sourceMappingURL=style.css.map */
