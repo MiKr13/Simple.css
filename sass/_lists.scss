@@ -20,10 +20,31 @@
         display: block;
 
         &.selected {
+            transform: perspective(400px) translateZ(2px);
+            -webkit-transform: perspective(400px) translateZ(2px);
+            -moz-transform: perspective(400px) translateZ(2px);
+            -ms-transform: perspective(400px) translateZ(2px);
+            -o-transform: perspective(400px) translateZ(2px);
             z-index: 2;
             color: $white;
             background-color: $cyan-d-4;
             border-color: $cyan-d-4;
+            box-shadow: 0 2px 2px rgba(0, 0, 0, 0.24), 0 0 2px rgba(0, 0, 0, 0.12);
+            transition: all .15s ease-in;
+            -webkit-transition: all .15s ease-in;
+            -moz-transition: all .15s ease-in;
+            -ms-transition: all .15s ease-in;
+            -o-transition: all .15s ease-in;
+
+            &:active {
+                z-index: 2;
+                transform: perspective(400px) translateZ(-2px);
+                -webkit-transform: perspective(400px) translateZ(-2px);
+                -moz-transform: perspective(400px) translateZ(-2px);
+                -ms-transform: perspective(400px) translateZ(-2px);
+                -o-transform: perspective(400px) translateZ(-2px);
+                box-shadow: none;
+            }
         }
 
         &.disabled {
@@ -35,22 +56,34 @@
 
         &-action {
             cursor: pointer;
+            transition: all .15s ease-in;
+            -webkit-transition: all .15s ease-in;
+            -moz-transition: all .15s ease-in;
+            -ms-transition: all .15s ease-in;
+            -o-transition: all .15s ease-in;
 
             &:hover,
             &:focus {
+                transform: perspective(400px) translateZ(2px);
+                -webkit-transform: perspective(400px) translateZ(2px);
+                -moz-transform: perspective(400px) translateZ(2px);
+                -ms-transform: perspective(400px) translateZ(2px);
+                -o-transform: perspective(400px) translateZ(2px);
                 z-index: 2;
                 background-color: $cyan-l-5;
+                box-shadow: 0 2px 2px rgba(0, 0, 0, 0.24), 0 0 2px rgba(0, 0, 0, 0.12);
+            }
+
+            &:active {
+                z-index: 2;
+                transform: perspective(400px) translateZ(-2px);
+                -webkit-transform: perspective(400px) translateZ(-2px);
+                -moz-transform: perspective(400px) translateZ(-2px);
+                -ms-transform: perspective(400px) translateZ(-2px);
+                -o-transform: perspective(400px) translateZ(-2px);
+                box-shadow: none;
             }
         }
 
-        &:first-child {
-            border-top-left-radius: .25rem;
-            border-top-right-radius: .25rem;
-        }
-
-        &:last-child {
-            border-bottom-left-radius: .25rem;
-            border-bottom-right-radius: .25rem;
-        }
     }
 }
